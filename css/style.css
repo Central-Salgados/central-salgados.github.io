@@ -30,7 +30,9 @@ body {
   line-height: 1.5;
 }
 
-img { max-width: 100%; display: block; }
+/* height: auto mantém a proporção quando a largura muda
+   (sem isso, a altura escrita no HTML fica fixa e a imagem deforma) */
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 
 h1, h2, h3 { font-family: var(--fonte-titulo); line-height: 1.1; color: var(--verde-escuro); }
