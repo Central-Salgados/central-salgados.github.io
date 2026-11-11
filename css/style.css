@@ -1,0 +1,230 @@
+/* =========================================================
+   ESTILO — cores tiradas do logo.
+   Para mudar uma cor no site inteiro, mude só aqui no :root.
+   ========================================================= */
+:root {
+  --verde: #1d8a2c;
+  --verde-escuro: #0f4a18;
+  --verde-claro: #e6f2e3;
+  --creme: #fbf6ec;
+  --dourado: #d98e2b;
+  --texto: #1f2a1f;
+  --texto-suave: #5b665a;
+  --borda: #e4dccb;
+  --branco: #ffffff;
+
+  --fonte-titulo: "Fraunces", Georgia, serif;
+  --fonte-texto: "Nunito", system-ui, sans-serif;
+  --raio: 16px;
+  --largura: 1080px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  font-family: var(--fonte-texto);
+  background: var(--creme);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+h1, h2, h3 { font-family: var(--fonte-titulo); line-height: 1.1; color: var(--verde-escuro); }
+h2 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin-bottom: 1.25rem; }
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.85rem 1.4rem; border-radius: 999px;
+  font-weight: 800; text-decoration: none; border: 2px solid transparent;
+  transition: transform 0.15s, background 0.15s;
+}
+.botao:hover { transform: translateY(-2px); }
+.botao--whats { background: var(--verde); color: var(--branco); }
+.botao--whats:hover { background: var(--verde-escuro); }
+.botao--contorno { border-color: var(--verde); color: var(--verde-escuro); }
+.botao--contorno:hover { background: var(--verde-claro); }
+.botao--claro { background: var(--creme); color: var(--verde-escuro); }
+.botao--pequeno { padding: 0.5rem 1.1rem; font-size: 0.95rem; }
+
+/* ---------- Topo ---------- */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.6rem 16px;
+  background: rgba(251, 246, 236, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borda);
+}
+.topo__marca {
+  display: flex; align-items: center; gap: 0.5rem; text-decoration: none;
+  font-family: var(--fonte-titulo); font-weight: 800; color: var(--verde-escuro); font-size: 1.1rem;
+}
+.topo__menu { display: none; gap: 1.5rem; }
+.topo__menu a { text-decoration: none; font-weight: 600; color: var(--texto-suave); }
+.topo__menu a:hover { color: var(--verde); }
+
+/* ---------- Início (hero) ---------- */
+.hero {
+  max-width: var(--largura); margin: 0 auto;
+  padding: 2.5rem 16px 3rem;
+  display: grid; gap: 2.5rem;
+}
+.hero__selo {
+  display: inline-block; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--dourado); margin-bottom: 0.75rem;
+}
+.hero h1 { font-size: clamp(2.4rem, 9vw, 4rem); margin-bottom: 1rem; }
+.hero__sub { font-size: 1.1rem; color: var(--texto-suave); max-width: 32rem; margin-bottom: 1.5rem; }
+.hero__botoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; }
+
+.status { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--texto-suave); }
+.entrega { margin-top: 0.5rem; font-weight: 600; color: var(--texto-suave); }
+.entrega strong { color: var(--verde-escuro); }
+.ponto { width: 10px; height: 10px; border-radius: 50%; }
+.ponto--aberto { background: #2fb344; box-shadow: 0 0 0 4px #2fb34433; }
+.ponto--fechado { background: #c0463b; }
+
+.hero__fotos { position: relative; min-height: 320px; }
+.hero__logo {
+  position: relative; z-index: 2; width: 62%; margin: 0 auto;
+  filter: drop-shadow(0 12px 24px rgba(15, 74, 24, 0.3));
+}
+.hero__foto {
+  position: absolute; width: 42%; aspect-ratio: 3 / 4; object-fit: cover;
+  border-radius: var(--raio); border: 5px solid var(--branco);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.hero__foto--a { left: 0; bottom: 0; transform: rotate(-6deg); }
+.hero__foto--b { right: 0; top: 0; transform: rotate(5deg); }
+
+/* ---------- Seções ---------- */
+.secao { max-width: var(--largura); margin: 0 auto; padding: 3rem 16px; }
+.secao__intro { color: var(--texto-suave); margin: -0.5rem 0 1.5rem; font-size: 1.05rem; }
+
+.secao--verde {
+  max-width: none; background: var(--verde-escuro); color: var(--creme);
+  padding-left: max(16px, calc((100% - var(--largura)) / 2 + 16px));
+  padding-right: max(16px, calc((100% - var(--largura)) / 2 + 16px));
+}
+.secao--verde h2 { color: var(--creme); }
+.secao--verde .secao__intro { color: #cfe3cc; }
+
+/* ---------- Cardápio ---------- */
+.abas {
+  display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; margin-bottom: 1.5rem;
+  scrollbar-width: none;
+}
+.abas a {
+  flex: none; padding: 0.45rem 1rem; border-radius: 999px; text-decoration: none;
+  background: var(--branco); border: 1px solid var(--borda); font-weight: 600; font-size: 0.95rem;
+}
+.abas a:hover { border-color: var(--verde); color: var(--verde); }
+
+.cardapio { display: grid; gap: 1.25rem; }
+
+.categoria {
+  background: var(--branco); border: 1px solid var(--borda); border-radius: var(--raio);
+  overflow: hidden;
+}
+.categoria__foto { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.categoria__conteudo { padding: 1.25rem; }
+.categoria__topo {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+  margin-bottom: 1rem;
+}
+.categoria h3 { font-size: 1.5rem; }
+.categoria__sub { color: var(--texto-suave); font-size: 0.95rem; }
+.categoria__preco {
+  flex: none; background: var(--verde-claro); color: var(--verde-escuro);
+  font-weight: 800; font-size: 1.15rem; padding: 0.35rem 0.8rem; border-radius: 10px; text-align: center;
+}
+.categoria__preco small { display: block; font-size: 0.75rem; font-weight: 600; }
+
+.grupo + .grupo { margin-top: 1rem; }
+.grupo h4 {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--dourado); margin-bottom: 0.5rem;
+}
+.grupo--extra { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed var(--borda); }
+
+.sabores { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sabores li { background: var(--creme); padding: 0.3rem 0.7rem; border-radius: 8px; font-size: 0.95rem; }
+
+.itens { list-style: none; display: grid; gap: 0.7rem; }
+.itens li { display: flex; align-items: baseline; gap: 0.5rem; }
+.itens__nome { font-weight: 600; }
+.itens__nome small { display: block; font-weight: 400; color: var(--texto-suave); font-size: 0.85rem; }
+.itens__linha { flex: 1; border-bottom: 2px dotted var(--borda); min-width: 1rem; }
+.itens__preco { font-weight: 800; color: var(--verde-escuro); white-space: nowrap; }
+.itens__preco small { font-weight: 600; color: var(--texto-suave); }
+
+/* ---------- Encomendas ---------- */
+.encomendas__foto {
+  width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 40%;
+  border-radius: var(--raio); margin-bottom: 1.25rem;
+}
+@media (min-width: 760px) { .encomendas__foto { aspect-ratio: 16 / 6; } }
+
+.combos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+.combo {
+  background: var(--creme); color: var(--verde-escuro); border-radius: var(--raio);
+  padding: 1.1rem 0.5rem; text-align: center; display: grid; gap: 0.1rem;
+}
+.combo__qtd { font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(2rem, 8vw, 3rem); line-height: 1; }
+.combo__rotulo { font-size: 0.85rem; color: var(--texto-suave); }
+.combo__preco { font-weight: 800; font-size: 1.1rem; color: var(--verde); margin-top: 0.4rem; }
+
+.avisos { list-style: none; display: grid; gap: 0.4rem; margin-bottom: 1.75rem; }
+.avisos li::before { content: "✓ "; color: var(--dourado); font-weight: 800; }
+
+/* ---------- Horário e localização ---------- */
+.local { display: grid; gap: 1.5rem; }
+.horarios { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; }
+.horarios th, .horarios td { padding: 0.6rem 0.75rem; text-align: left; border-bottom: 1px solid var(--borda); }
+.horarios th { font-weight: 600; }
+.horarios td { text-align: right; }
+.horarios tr.hoje { background: var(--verde-claro); font-weight: 800; }
+.horarios small { color: var(--verde); font-weight: 600; }
+.local__endereco { margin-bottom: 1rem; color: var(--texto-suave); }
+.local__mapa { width: 100%; min-height: 300px; border: 0; border-radius: var(--raio); background: var(--verde-claro); }
+
+/* ---------- Contato ---------- */
+.contatos { display: grid; gap: 0.75rem; }
+.contato {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  background: var(--branco); border: 1px solid var(--borda); border-radius: var(--raio);
+  padding: 1rem 1.25rem; text-decoration: none; font-weight: 600;
+  transition: border-color 0.15s;
+}
+.contato:hover { border-color: var(--verde); }
+.contato__rotulo { color: var(--texto-suave); font-weight: 400; }
+
+/* ---------- Rodapé ---------- */
+.rodape { text-align: center; padding: 2rem 16px; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid var(--borda); }
+
+/* =========================================================
+   TELAS MAIORES (tablet e computador)
+   O site é feito primeiro pro celular; aqui ele se espalha.
+   ========================================================= */
+@media (min-width: 760px) {
+  .topo { padding: 0.75rem 32px; }
+  .topo__menu { display: flex; }
+
+  .hero { grid-template-columns: 1.1fr 1fr; align-items: center; padding-top: 4rem; padding-bottom: 4rem; }
+  .hero__fotos { min-height: 440px; }
+
+  .cardapio { grid-template-columns: repeat(2, 1fr); align-items: start; }
+  .categoria--com-foto { min-height: 280px; grid-column: span 2; display: grid; grid-template-columns: 1fr 1.4fr; }
+  /* height: 0 + min-height: 100% = a foto acompanha a altura do texto,
+     em vez de esticar o cartão com o tamanho dela */
+  .categoria--com-foto .categoria__foto { height: 0; min-height: 100%; aspect-ratio: auto; }
+
+  .local { grid-template-columns: 1fr 1.3fr; align-items: start; }
+  .contatos { grid-template-columns: repeat(3, 1fr); }
+  .contato { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+}

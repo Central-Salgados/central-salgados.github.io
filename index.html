@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título e descrição: é o que aparece no Google -->
+  <title>Central Salgados | Salgados em Dobrada - SP</title>
+  <meta name="description" content="Salgados de estufa, salgados de festa, pastéis e tortas em Dobrada - SP desde 2011. Veja o cardápio, horários e peça pelo WhatsApp.">
+
+  <!-- Prévia quando o link é compartilhado no WhatsApp/Instagram -->
+  <meta property="og:title" content="Central Salgados — Dobrada - SP">
+  <meta property="og:description" content="Cardápio, horários e pedidos pelo WhatsApp.">
+  <meta property="og:image" content="img/logo.png">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== TOPO ========== -->
+  <header class="topo">
+    <a href="#inicio" class="topo__marca">
+      <img src="img/logo.png" alt="" width="40" height="40">
+      <span>Central Salgados</span>
+    </a>
+    <nav class="topo__menu" aria-label="Seções">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#encomendas">Encomendas</a>
+      <a href="#horario">Horário</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="botao botao--whats botao--pequeno" data-whats href="#" target="_blank" rel="noopener">Pedir</a>
+  </header>
+
+  <main>
+
+    <!-- ========== INÍCIO ========== -->
+    <section class="hero" id="inicio">
+      <div class="hero__texto">
+        <p class="hero__selo">Dobrada - SP · desde <span data-desde></span></p>
+        <h1>O sabor que você já conhece.</h1>
+        <p class="hero__sub">Salgados fritos e assados, pastéis, tortas e encomendas para festa. Peça pelo WhatsApp e receba em casa.</p>
+        <div class="hero__botoes">
+          <a class="botao botao--whats" data-whats href="#" target="_blank" rel="noopener">Pedir no WhatsApp</a>
+          <a class="botao botao--contorno" href="#cardapio">Ver cardápio</a>
+        </div>
+        <p class="status" data-status></p>
+        <p class="entrega">🛵 Delivery · taxa de entrega <strong data-entrega></strong></p>
+      </div>
+      <div class="hero__fotos">
+        <img class="hero__logo" src="img/logo.png" alt="Logo da Central Salgados" width="480" height="449">
+        <img class="hero__foto hero__foto--a" src="img/esfiha-frango.jpg" alt="Esfihas de frango" loading="lazy">
+        <img class="hero__foto hero__foto--b" src="img/esfiha-carne.jpg" alt="Esfihas de carne" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ========== CARDÁPIO ==========
+         O conteúdo é montado pelo js/main.js a partir do js/dados.js -->
+    <section class="secao" id="cardapio">
+      <h2>Cardápio</h2>
+      <nav class="abas" data-abas aria-label="Categorias do cardápio"></nav>
+      <div class="cardapio" data-cardapio></div>
+    </section>
+
+    <!-- ========== ENCOMENDAS ========== -->
+    <section class="secao secao--verde" id="encomendas">
+      <h2>Encomendas para festa</h2>
+      <p class="secao__intro">Combos de salgados de festa sortidos com os sabores mais pedidos.</p>
+      <img class="encomendas__foto" src="img/festa-caixa.jpg" alt="Caixa com salgados de festa sortidos" loading="lazy">
+      <div class="combos" data-combos></div>
+      <ul class="avisos">
+        <li>Sem quantidade mínima: também vendemos por unidade (<span data-preco-festa></span> cada).</li>
+        <li>O prazo para encomenda é combinado pelo WhatsApp.</li>
+      </ul>
+      <a class="botao botao--claro" data-whats="encomenda" href="#" target="_blank" rel="noopener">Fazer uma encomenda</a>
+    </section>
+
+    <!-- ========== HORÁRIO E LOCALIZAÇÃO ========== -->
+    <section class="secao" id="horario">
+      <h2>Horário e localização</h2>
+      <div class="local">
+        <div>
+          <table class="horarios" data-horarios></table>
+          <p class="local__endereco" data-endereco></p>
+          <p class="local__endereco">Delivery com taxa de entrega de <strong data-entrega></strong>.</p>
+          <a class="botao botao--contorno" data-rota href="#" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+        <iframe class="local__mapa" data-mapa title="Mapa da Central Salgados" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section class="secao" id="contato">
+      <h2>Contato</h2>
+      <div class="contatos">
+        <a class="contato" data-whats href="#" target="_blank" rel="noopener">
+          <span class="contato__rotulo">WhatsApp</span>
+          <span data-whats-texto></span>
+        </a>
+        <a class="contato" data-tel href="#">
+          <span class="contato__rotulo">Telefone</span>
+          <span data-tel-texto></span>
+        </a>
+        <a class="contato" data-insta href="#" target="_blank" rel="noopener">
+          <span class="contato__rotulo">Instagram</span>
+          <span data-insta-texto></span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>© <span data-ano></span> Central Salgados · Dobrada - SP</p>
+  </footer>
+
+  <!-- Ordem importa: primeiro os dados, depois o código que usa eles -->
+  <script src="js/dados.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
