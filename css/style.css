@@ -193,6 +193,7 @@ h2 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin-bottom: 1.25rem; }
 .horarios tr.hoje { background: var(--verde-claro); font-weight: 800; }
 .horarios small { color: var(--verde); font-weight: 600; }
 .local__endereco { margin-bottom: 1rem; color: var(--texto-suave); }
+.local__titulo { font-size: 1.2rem; margin: 1.5rem 0 0.25rem; }
 .local__mapa { width: 100%; min-height: 300px; border: 0; border-radius: var(--raio); background: var(--verde-claro); }
 
 /* ---------- Contato ---------- */

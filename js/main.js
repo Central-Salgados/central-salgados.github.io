@@ -44,8 +44,14 @@ function preencherContatos() {
   $("[data-mapa]").src = `https://maps.google.com/maps?q=${ponto}&z=17&output=embed`;
   $("[data-rota]").href = `https://www.google.com/maps/dir/?api=1&destination=${ponto}`;
 
-  // Taxa de entrega aparece em todo lugar marcado com data-entrega
-  $$("[data-entrega]").forEach((el) => (el.textContent = formatarPreco(LOJA.taxaEntrega)));
+  // Menor taxa (aparece no topo como "a partir de")
+  const menorTaxa = Math.min(...LOJA.entregas.map((e) => e.taxa));
+  $("[data-entrega-minima]").textContent = formatarPreco(menorTaxa);
+
+  // Tabela com a taxa de cada cidade
+  $("[data-entregas]").innerHTML = LOJA.entregas.map((e) => `
+    <tr><th scope="row">${e.cidade}</th><td>${formatarPreco(e.taxa)}</td></tr>
+  `).join("");
 }
 
 /* ---------- Cardápio ---------- */

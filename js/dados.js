@@ -17,8 +17,12 @@ const LOJA = {
   // Ponto exato da loja no mapa (latitude, longitude) — o mesmo do linkme
   coordenadas: "-21.51745,-48.39489",
 
-  // Taxa de entrega do delivery
-  taxaEntrega: 10.00,
+  // Taxa de entrega por cidade. Para incluir uma cidade, copie uma linha.
+  entregas: [
+    { cidade: "Dobrada", taxa: 5.00 },
+    { cidade: "Santa Ernestina", taxa: 15.00 },
+    { cidade: "Matão", taxa: 20.00 },
+  ],
 
   // Número só com dígitos: 55 (Brasil) + DDD + número
   whatsapp: "5516982053296",
